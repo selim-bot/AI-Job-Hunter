@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+pydantic-settings
+sqlalchemy
+psycopg[binary]
+httpx
+pypdf
+python-multipart
+streamlit
+requests
+playwright
+langgraph
+pytest
+pytest-asyncio

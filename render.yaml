@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ai-job-hunter-backend
+    runtime: docker
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+  - type: web
+    name: ai-job-hunter-frontend
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: streamlit run frontend/dashboard.py --server.address 0.0.0.0 --server.port $PORT
+    envVars:
+      - key: BACKEND_URL
+        sync: false
